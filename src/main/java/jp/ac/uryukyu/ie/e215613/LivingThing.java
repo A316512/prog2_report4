@@ -24,11 +24,10 @@ public LivingThing (String name, int hitPoint, int attack){
 }
 
 public void attack(LivingThing opponent){
-    if( hitPoint > 0 )
-        this.dead = false;
+    if( this.dead == false ){
         int damage = (int)(Math.random() * attack);
         System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
-        opponent.wounded(damage);
+        opponent.wounded(damage);}
 }
 
 public void wounded(int damage){
