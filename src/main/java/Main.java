@@ -9,7 +9,7 @@ public class Main {
         System.out.printf("%s vs. %s\n", hero.getname(), enemy.getname());
 
         int turn = 0;
-        while( hero.isDead() == false && enemy.isDead() == false ){
+        while( hero.isdead() == false && enemy.isdead() == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
             hero.attack(enemy);

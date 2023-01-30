@@ -18,10 +18,10 @@ public class Hero {
     public String getname() {
         return this.name;
     }
-    public boolean isDead() {
-        return dead;
+    public boolean isdead() {
+        return this.dead;
     }
-    public void setDead(boolean dead) {
+    public void setdead(boolean dead){
         this.dead = dead;
     }
     public int gethitPoint() {
@@ -29,9 +29,6 @@ public class Hero {
     }
     public int getattack() {
         return this.attack;
-    }
-    public boolean getdead() {
-        return this.isDead();
     }
 
     /**
@@ -44,7 +41,7 @@ public class Hero {
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;
-        setDead(false);
+        setdead(false);
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
@@ -67,7 +64,7 @@ public class Hero {
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
-            setDead(true);
+            setdead(true);
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
         }
     }

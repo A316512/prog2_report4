@@ -14,14 +14,14 @@ public class Enemy {
     private int attack;
     private boolean dead;
 
-    // Getter
+    // Getter/Setter
     public String getname() {
         return this.name;
     }
-    public boolean isDead() {
-        return dead;
+    public boolean isdead() {
+        return this.dead;
     }
-    public void setDead(boolean dead) {
+    public void setdead(boolean dead){
         this.dead = dead;
     }
     public int gethitPoint() {
@@ -29,9 +29,6 @@ public class Enemy {
     }
     public int getattack() {
         return this.attack;
-    }
-    public boolean getdead() {
-        return this.isDead();
     }
 
     /**
@@ -44,7 +41,7 @@ public class Enemy {
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;
-        setDead(false);
+        setdead(false);
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
@@ -55,7 +52,7 @@ public class Enemy {
      */
     public void attack(Hero hero){
         if (hitPoint > 0){
-            setDead(false);
+            setdead(false);
             int damage = (int)(Math.random() * attack);
             System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getname(), damage);
             hero.wounded(damage);
@@ -71,7 +68,7 @@ public class Enemy {
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
-            setDead(true);
+            setdead(true);
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
